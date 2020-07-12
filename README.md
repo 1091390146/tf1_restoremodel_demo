@@ -1,7 +1,7 @@
-## Ç°ÑÔ
-±¾ÎÄÊÇ´úÂë¸ù¾İ**Îâ¶÷´ïÉî¶ÈÑ§Ï°µÚËÄ¿Î³ÌµÚÒ»ÖÜµÚ¶ş½Ú×÷ÒµÍ¼Ïñ·ÖÀàÊ¶±ğ**ĞŞ¸Ä¶ø³É£¬»á¼òµ¥½éÉÜÒ»ÏÂÏîÄ¿Á÷³Ì£¬È»ºó½éÉÜtensorflow1±£´æÄ£ĞÍµÄÁ½ÖÖ·½·¨£¬ÒÔ¼°ÈçºÎÓÃÄ£ĞÍÔ¤²â¡£
-## ÏîÄ¿Á÷³Ì¼òµ¥½éÉÜ
-ÕâÀïÖ±½Ó·Å´úÂëÁË±È½Ï¼òµ¥¡£
+## å‰è¨€
+æœ¬æ–‡æ˜¯ä»£ç æ ¹æ®**å´æ©è¾¾æ·±åº¦å­¦ä¹ ç¬¬å››è¯¾ç¨‹ç¬¬ä¸€å‘¨ç¬¬äºŒèŠ‚ä½œä¸šå›¾åƒåˆ†ç±»è¯†åˆ«**ä¿®æ”¹è€Œæˆï¼Œä¼šç®€å•ä»‹ç»ä¸€ä¸‹é¡¹ç›®æµç¨‹ï¼Œç„¶åä»‹ç»tensorflow1ä¿å­˜æ¨¡å‹çš„ä¸¤ç§æ–¹æ³•ï¼Œä»¥åŠå¦‚ä½•ç”¨æ¨¡å‹é¢„æµ‹ã€‚
+## é¡¹ç›®æµç¨‹ç®€å•ä»‹ç»
+è¿™é‡Œç›´æ¥æ”¾ä»£ç äº†æ¯”è¾ƒç®€å•ã€‚
 ```
 import tensorflow.compat.v1 as tf
 from cnn_utils import *
@@ -127,12 +127,12 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, num_epochs = 
 _, _, parameters = model(X_train, Y_train, X_test, Y_test)
 ```
 
-## ±£´æÄ£ĞÍ
-¶¨ÒåmodelµÄ±£´æÂ·¾¶
+## ä¿å­˜æ¨¡å‹
+å®šä¹‰modelçš„ä¿å­˜è·¯å¾„
 ```
  SAVE_FILE = "./model/model"
 ```
-ÔÚmodelº¯ÊıÖĞ¶¨Òå	tf.train.Saver(),ÔËĞĞsave()±£´æÄ£ĞÍ
+åœ¨modelå‡½æ•°ä¸­å®šä¹‰	tf.train.Saver(),è¿è¡Œsave()ä¿å­˜æ¨¡å‹
 ```
 with tf.Session() as sess:
 	saver = tf.train.Saver()
@@ -142,48 +142,48 @@ with tf.Session() as sess:
  	savepath = saver.save(sess,SAVE_FILE)
     print("Model saved in file: %s" %savepath)           
 ```
-tensorflowÑµÁ·ºó±£´æµÄÄ£ĞÍÖ÷Òª°üº¬Á½²¿·Ö£¬Ò»ÊÇÍøÂç½á¹¹µÄ¶¨Òå£¨ÍøÂçÍ¼£©£¬¶şÊÇÍøÂç½á¹¹ÀïµÄ²ÎÊıÖµ¡£
+tensorflowè®­ç»ƒåä¿å­˜çš„æ¨¡å‹ä¸»è¦åŒ…å«ä¸¤éƒ¨åˆ†ï¼Œä¸€æ˜¯ç½‘ç»œç»“æ„çš„å®šä¹‰ï¼ˆç½‘ç»œå›¾ï¼‰ï¼ŒäºŒæ˜¯ç½‘ç»œç»“æ„é‡Œçš„å‚æ•°å€¼ã€‚
 
-1¡¢.metaÎÄ¼ş
+1ã€.metaæ–‡ä»¶
 
-.meta ÎÄ¼şÒÔ ¡°protocol buffer¡±¸ñÊ½±£´æÁËÕû¸öÄ£ĞÍµÄ½á¹¹Í¼£¬Ä£ĞÍÉÏ¶¨ÒåµÄ²Ù×÷µÈĞÅÏ¢¡£
+.meta æ–‡ä»¶ä»¥ â€œprotocol bufferâ€æ ¼å¼ä¿å­˜äº†æ•´ä¸ªæ¨¡å‹çš„ç»“æ„å›¾ï¼Œæ¨¡å‹ä¸Šå®šä¹‰çš„æ“ä½œç­‰ä¿¡æ¯ã€‚
 
-Õâ¸öÎÄ¼ş±£´æÁËÍøÂç½á¹¹µÄ¶¨Òå¡£
+è¿™ä¸ªæ–‡ä»¶ä¿å­˜äº†ç½‘ç»œç»“æ„çš„å®šä¹‰ã€‚
 
-2¡¢.data-00000-of-00001 ÎÄ¼şºÍ .index ÎÄ¼ş
+2ã€.data-00000-of-00001 æ–‡ä»¶å’Œ .index æ–‡ä»¶
 
-.data-00000-of-00001 ÎÄ¼şºÍ .index ÎÄ¼şºÏÔÚÒ»Æğ×é³ÉÁË ckpt ÎÄ¼ş£¬±£´æÁËÍøÂç½á¹¹ÖĞËùÓĞ È¨ÖØºÍÆ«ÖÃ µÄÊıÖµ¡£
+.data-00000-of-00001 æ–‡ä»¶å’Œ .index æ–‡ä»¶åˆåœ¨ä¸€èµ·ç»„æˆäº† ckpt æ–‡ä»¶ï¼Œä¿å­˜äº†ç½‘ç»œç»“æ„ä¸­æ‰€æœ‰ æƒé‡å’Œåç½® çš„æ•°å€¼ã€‚
 
-.dataÎÄ¼ş±£´æµÄÊÇ±äÁ¿Öµ£¬.indexÎÄ¼ş±£´æµÄÊÇ.dataÎÄ¼şÖĞÊı¾İºÍ .metaÎÄ¼şÖĞ½á¹¹Í¼Ö®¼äµÄ¶ÔÓ¦¹ØÏµ£¨Mabey£©¡£
-
-
-
-3¡¢ checkpointÎÄ¼ş
-
-checkpointÊÇÒ»¸öÎÄ±¾ÎÄ¼ş£¬¼ÇÂ¼ÁËÑµÁ·¹ı³ÌÖĞÔÚËùÓĞÖĞ¼ä½ÚµãÉÏ±£´æµÄÄ£ĞÍµÄÃû³Æ£¬Ê×ĞĞ¼ÇÂ¼µÄÊÇ×îºó£¨×î½ü£©Ò»´Î±£´æµÄÄ£ĞÍÃû³Æ¡£
+.dataæ–‡ä»¶ä¿å­˜çš„æ˜¯å˜é‡å€¼ï¼Œ.indexæ–‡ä»¶ä¿å­˜çš„æ˜¯.dataæ–‡ä»¶ä¸­æ•°æ®å’Œ .metaæ–‡ä»¶ä¸­ç»“æ„å›¾ä¹‹é—´çš„å¯¹åº”å…³ç³»ï¼ˆMabeyï¼‰ã€‚
 
 
-## µÚÒ»ÖÖ»Ö¸´Ä£ĞÍ·½·¨:¶ÏµãĞøÑµ
-Ö»ĞèÒªĞŞ¸ÄÒ»´¦£º
+
+3ã€ checkpointæ–‡ä»¶
+
+checkpointæ˜¯ä¸€ä¸ªæ–‡æœ¬æ–‡ä»¶ï¼Œè®°å½•äº†è®­ç»ƒè¿‡ç¨‹ä¸­åœ¨æ‰€æœ‰ä¸­é—´èŠ‚ç‚¹ä¸Šä¿å­˜çš„æ¨¡å‹çš„åç§°ï¼Œé¦–è¡Œè®°å½•çš„æ˜¯æœ€åï¼ˆæœ€è¿‘ï¼‰ä¸€æ¬¡ä¿å­˜çš„æ¨¡å‹åç§°ã€‚
+
+
+## ç¬¬ä¸€ç§æ¢å¤æ¨¡å‹æ–¹æ³•:æ–­ç‚¹ç»­è®­
+åªéœ€è¦ä¿®æ”¹ä¸€å¤„ï¼š
 ```
  with tf.Session() as sess:
         saver = tf.train.Saver()
 
-        #Í¨¹ıÄ£ĞÍ½øĞĞÑµÁ·£¬×¢ÒâÇ°ÃæÒÑ¾­¹¹½¨ÁËÍ¼£¬¶ørestoreº¯ÊıÊÇ¸øÇ°ÃæµÄ±äÁ¿½øĞĞ¸³Öµ¡£
+        #é€šè¿‡æ¨¡å‹è¿›è¡Œè®­ç»ƒï¼Œæ³¨æ„å‰é¢å·²ç»æ„å»ºäº†å›¾ï¼Œè€Œrestoreå‡½æ•°æ˜¯ç»™å‰é¢çš„å˜é‡è¿›è¡Œèµ‹å€¼ã€‚
         if SECOND_TRAING:
             init = tf.global_variables_initializer()
             sess.run(init)
-            #×¢Òâ¿ÉÒÔÔÚrestoreÖ®Ç°½øĞĞ³õÊ¼»¯²Ù×÷£¬Ö®ºó²»¿ÉÒÔ
+            #æ³¨æ„å¯ä»¥åœ¨restoreä¹‹å‰è¿›è¡Œåˆå§‹åŒ–æ“ä½œï¼Œä¹‹åä¸å¯ä»¥
             saver.restore(sess, SAVE_FILE)
         else:
             init = tf.global_variables_initializer()
             sess.run(init)
 ```
-µÈÓÚÊÇ½«Í¼ÖØĞÂ½¨Á¢ÁËÒ»±é£¬ºÍÖ®Ç°Í¼µÄÒ»Ñù£¬È»ºó½«ckptÎÄ¼şÀïµÄÊı¾İrestoreµ½Í¼ÀïµÄ±äÁ¿Àï¡£
-##  µÚ¶şÖÖ»Ö¸´Ä£ĞÍ·½·¨£º	ÀûÓÃ.mateÎÄ¼ş»Ö¸´Í¼
-Èç¹û²»ÏëÖØĞÂ¶¨ÒåÒ»±éÍ¼£¬¿ÉÒÔÍ¨¹ıimport_meta_graph()À´¼ÓÔØÍ¼£¬²¢ÓÃrestore¸ø±äÁ¿¸³Öµ£¬Ö®ºó¿ÉÒÔ¶Ô»ñÈ¡µÄÖµ½øĞĞ²Ù×÷£¬Èç¹ûÖ®ºósaveµÄ»°£¬Ò²»á½«import_meta_graph()ÖĞÍ¼ÒıÓÃµÄ²¿·Ö±£´æÏÂÀ´¡£
+ç­‰äºæ˜¯å°†å›¾é‡æ–°å»ºç«‹äº†ä¸€éï¼Œå’Œä¹‹å‰å›¾çš„ä¸€æ ·ï¼Œç„¶åå°†ckptæ–‡ä»¶é‡Œçš„æ•°æ®restoreåˆ°å›¾é‡Œçš„å˜é‡é‡Œã€‚
+##  ç¬¬äºŒç§æ¢å¤æ¨¡å‹æ–¹æ³•ï¼š	åˆ©ç”¨.mateæ–‡ä»¶æ¢å¤å›¾
+å¦‚æœä¸æƒ³é‡æ–°å®šä¹‰ä¸€éå›¾ï¼Œå¯ä»¥é€šè¿‡import_meta_graph()æ¥åŠ è½½å›¾ï¼Œå¹¶ç”¨restoreç»™å˜é‡èµ‹å€¼ï¼Œä¹‹åå¯ä»¥å¯¹è·å–çš„å€¼è¿›è¡Œæ“ä½œï¼Œå¦‚æœä¹‹åsaveçš„è¯ï¼Œä¹Ÿä¼šå°†import_meta_graph()ä¸­å›¾å¼•ç”¨çš„éƒ¨åˆ†ä¿å­˜ä¸‹æ¥ã€‚
 ```
-#²»¶ÔÍ¼½øĞĞÖØ¹¹£¬ÀûÓÃ¼ÓÔØµÄÍ¼½øĞĞÑµÁ·
+#ä¸å¯¹å›¾è¿›è¡Œé‡æ„ï¼Œåˆ©ç”¨åŠ è½½çš„å›¾è¿›è¡Œè®­ç»ƒ
 def train_by_model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, num_epochs = 100,
         minibatch_size = 64, print_cost = True):
 
@@ -194,7 +194,7 @@ def train_by_model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, num_
     costs = []
 
     with tf.Session() as sess:
-        #ÕâÀïÖ±½Ó½«Ä£ĞÍµÄÍ¼µ¼Èë²¢¹¹½¨Îªdefault
+        #è¿™é‡Œç›´æ¥å°†æ¨¡å‹çš„å›¾å¯¼å…¥å¹¶æ„å»ºä¸ºdefault
         saver = tf.train.import_meta_graph('./model/model.meta')
         saver.restore(sess, SAVE_FILE)
         graph = tf.get_default_graph()
@@ -244,16 +244,16 @@ def train_by_model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, num_
 
     return
 ```
-Í¨¹ıget_tensor_by_name»òÕßget_collectionÀ´»ñÈ¡±£´æµÄÍ¼ÖĞµÄop»ò±äÁ¿£¬
-ÕâÀïÈ«Á¬½Ó²ãZ3²»ÖªÎªºÎ²»ÄÜÓÃget_tensor_by_name£¬Òò´ËÓÃget_collectionÀ´»ñÈ¡£¬ËùÒÔÔÚ¶¨ÒåÍøÂç½á¹¹µÄÊ±ºòµ÷ÓÃadd_collection:
+é€šè¿‡get_tensor_by_nameæˆ–è€…get_collectionæ¥è·å–ä¿å­˜çš„å›¾ä¸­çš„opæˆ–å˜é‡ï¼Œ
+è¿™é‡Œå…¨è¿æ¥å±‚Z3ä¸çŸ¥ä¸ºä½•ä¸èƒ½ç”¨get_tensor_by_nameï¼Œå› æ­¤ç”¨get_collectionæ¥è·å–ï¼Œæ‰€ä»¥åœ¨å®šä¹‰ç½‘ç»œç»“æ„çš„æ—¶å€™è°ƒç”¨add_collection:
 ```
  	Z3 = tf.layers.dense(inputs=P2 , units=6, name='Z3')
-    #½«Z3Ìí¼Óµ½¼¯ºÏÖĞ
+    #å°†Z3æ·»åŠ åˆ°é›†åˆä¸­
     tf.add_to_collection('output', Z3)
 	return Z3
 ```
-get_tensor_by_nameºÍget_collection×Ü½áµÄ²»¹»È«Ãæ£¬ÏëÁË½â¿ÉÒÔÔÙ²éÔÄÏà¹Ø×ÊÁÏ¡£
-## Í¨¹ıµ÷ÓÃÄ£ĞÍ½øĞĞÔ¤²â
+get_tensor_by_nameå’Œget_collectionæ€»ç»“çš„ä¸å¤Ÿå…¨é¢ï¼Œæƒ³äº†è§£å¯ä»¥å†æŸ¥é˜…ç›¸å…³èµ„æ–™ã€‚
+## é€šè¿‡è°ƒç”¨æ¨¡å‹è¿›è¡Œé¢„æµ‹
 ```
 def accuracy(X_train, Y_train, X_test, Y_test):
     with tf.Session() as sess:
@@ -263,7 +263,7 @@ def accuracy(X_train, Y_train, X_test, Y_test):
         X = graph.get_tensor_by_name('X:0')
         Y = graph.get_tensor_by_name('Y:0')
 
-        #get_collection·µ»ØµÄÊÇÒ»¸öÁĞ±í£¬ÕâÀïÈ¡µÚÒ»¸ö
+        #get_collectionè¿”å›çš„æ˜¯ä¸€ä¸ªåˆ—è¡¨ï¼Œè¿™é‡Œå–ç¬¬ä¸€ä¸ª
         Z3 = tf.get_collection('output')[0]
 
         # Calculate the correct predictions
@@ -273,7 +273,7 @@ def accuracy(X_train, Y_train, X_test, Y_test):
         # Calculate accuracy on the test set
         accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
 
-        #×¢ÒâÕâÀïµÄevalº¯Êı»¹ÊÇÒªÔËĞĞsession
+        #æ³¨æ„è¿™é‡Œçš„evalå‡½æ•°è¿˜æ˜¯è¦è¿è¡Œsession
         train_accuracy = accuracy.eval({X: X_train, Y: Y_train})
         test_accuracy = accuracy.eval({X: X_test, Y: Y_test})
         print("Train Accuracy:", train_accuracy)
@@ -281,3 +281,4 @@ def accuracy(X_train, Y_train, X_test, Y_test):
 
     return
 ```
+åšå®¢åœ°å€ä¸ºï¼š[https://blog.csdn.net/qq_33542428/article/details/107302190](https://blog.csdn.net/qq_33542428/article/details/107302190)
